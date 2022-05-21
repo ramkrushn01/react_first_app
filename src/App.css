@@ -1,3 +1,7 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -12,6 +16,8 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -32,7 +38,66 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* custom css */
+
+.container {
+  margin: auto;
+  align-items: center;
+  width: 80%;
+}
+
+.my-4 {
+  margin-block: 20px;
+}
+
+.mx-4 {
+  margin-inline: 20px;
+}
+
+
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  border: 2px solid blue;
+  border-radius: 3px;
+  padding: 2px;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: blue;
+}
+
+/* navbar */
+.navbar {
+  background-color: black;
+  color: white;
+}
+
+.navbar ul {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  margin-block: auto;
+
+}
+
+.navbar li {
+  margin-block: auto;
+  list-style: none;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+
+.navbar a {
+  text-decoration: none !important;
 }
