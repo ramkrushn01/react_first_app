@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function Textarea(props) {
 
@@ -14,7 +14,7 @@ export default function Textarea(props) {
 
 
 
-    const [textValue, setTextValue] = useState(props.placeholder);
+    const [textValue, setTextValue] = useState('');
 
     const writeText = (event) => {
         setTextValue(event.target.value);
@@ -23,13 +23,14 @@ export default function Textarea(props) {
     const makeUpperCase = (event) => {
         setTextValue(textValue.toUpperCase());
     }
-
-    const ret = 'ramkrushn'
+    let pStyle = {
+        "overflow-y": "scroll"
+    }
 
     return (
         <div className='container my-4'>
             <h1>Welcome in Text Utils</h1>
-            <textarea name="text" id="text" placeholder={props.placeholder} onChange={writeText} cols="100" value={textValue} rows="10" autoFocus></textarea><br />
+            <textarea name="text" id="text" placeholder={props.placeholder} onChange={writeText} cols={window.innerWidth < 200 ? 20 : 50} value={textValue} rows="10" autoFocus></textarea><br />
             <button className='btn-primary my-4' onClick={makeUpperCase}>Upper Case</button>
             <button className='btn-primary my-4 mx-4' onClick={() => setTextValue(textValue.toLowerCase())}>lower case</button>
             <button className='btn-primary my-4' onClick={() => setTextValue('')}>Clear Text</button>
@@ -39,7 +40,7 @@ export default function Textarea(props) {
             <h4>
                 Preview:
             </h4>
-            <p>{textValue}</p>
+            <p style={pStyle}>{textValue}</p>
         </div >
     )
 }
